@@ -21,7 +21,7 @@ services:
       timeout: 5s
       retries: 5
   configserver:
-    image: configserver:0.0.1-SNAPSHOT
+    image: configserver:latest
     ports:
        - "8071:8071"
     environment:
@@ -31,7 +31,7 @@ services:
         aliases:
           - "configserver"
   licensingservice:
-    image: licensing-service:0.0.1-SNAPSHOT
+    image: licensing-service:latest
     environment:
       PROFILE: "dev"
       CONFIGSERVER_URI: "http://configserver:8071"
